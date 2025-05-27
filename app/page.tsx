@@ -33,6 +33,7 @@ export default function RetroPortfolio() {
   const [terminalInput, setTerminalInput] = useState("");
   const [terminalHistory, setTerminalHistory] = useState<string[]>([]);
   const [touchCount, setTouchCount] = useState(0);
+  const [ip, setIp] = useState("");
 
   const fullText = aboutData.fullText;
 
@@ -74,6 +75,12 @@ export default function RetroPortfolio() {
       }, 3000);
     }
   }, [touchCount]);
+
+  useEffect(() => {
+    fetch("https://api.ipify.org?format=json")
+      .then((res) => res.json())
+      .then((data) => setIp(data.ip));
+  }, []);
 
   useEffect(() => {
     // Typewriter effect for the name
@@ -217,7 +224,7 @@ export default function RetroPortfolio() {
       />
 
       {/* Header */}
-      <Header currentTime={currentTime} />
+      <Header currentTime={currentTime} ip={ip} />
 
       <div className="max-w-7xl mx-auto p-3 md:p-6 grid grid-cols-1 xl:grid-cols-5 gap-4 md:gap-6 relative z-10 min-h-[calc(100vh-120px)]">
         {/* Navigation */}
@@ -260,7 +267,7 @@ export default function RetroPortfolio() {
       </div>
 
       {/* Footer */}
-      <Footer currentTime={currentTime} />
+      <Footer currentTime={currentTime} ip={ip} />
     </div>
   );
 }
