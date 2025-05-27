@@ -13,7 +13,7 @@ export interface Section {
 // Export the sections array for reuse
 export const sections: Section[] = [
   { id: "about", label: "ABOUT.ME", icon: Terminal },
-  { id: "experience", label: "EXPERIENCE.LOG", icon: Briefcase },
+  { id: "experience", label: "EXPERIENCE.BAT", icon: Briefcase },
   { id: "education", label: "EDUCATION.DAT", icon: GraduationCap },
   { id: "contact", label: "CONTACT.INFO", icon: Mail },
 ];

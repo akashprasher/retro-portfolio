@@ -2,11 +2,11 @@
 
 A nostalgic, terminal-inspired portfolio website with interactive elements and easter eggs. Built with Next.js and styled with Tailwind CSS, featuring a retro CRT monitor aesthetic.
 
-![Retro Portfolio Screenshot](screenshot.png)
+![Retro Portfolio Screenshot](/public/portfolio.png)
 
 ## Live Demo
 
-[View Live Demo](https://akashprasher.com) <!-- Add your deployment URL here when available -->
+[View Live Demo](https://akashprasher.com)
 
 ## Features
 
