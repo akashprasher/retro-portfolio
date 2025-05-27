@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { aboutData } from "@/data";
+import { useEffect } from "react";
+import { useState } from "react";
 
 interface AboutSectionProps {
   typewriterText: string;
@@ -13,11 +15,19 @@ export function AboutSection({
   fullText,
   showContent,
 }: AboutSectionProps) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
   return (
     <Card className="bg-black border-green-400 text-green-400 h-full">
       <CardHeader>
         <CardTitle className="text-lg md:text-xl text-green-400">
-          {"> LOADING PROFILE..."}
+          {isLoading ? "> LOADING ABOUT.ME..." : "> ABOUT.ME EXECUTED"}
           <span className="animate-pulse">_</span>
         </CardTitle>
       </CardHeader>

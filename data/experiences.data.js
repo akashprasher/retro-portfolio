@@ -17,7 +17,7 @@ export const experiences = [
           "Built a feature-rich web system for managing client portfolios, revenue tracking, and appointment scheduling using React. Designed an interactive calendar UI for a comprehensive view of client activities and schedules. Integrated a robust Markdown editor for enhanced customization and user engagement.",
       },
       {
-        title: "Multi-Feature Mobile App for Moskiddo (Ongoing)",
+        title: "Multi-Feature Mobile App for Moskiddo",
         description:
           "Leading the development of a React Native app for a client offering on-site children's activities, events, and classes. Implemented features like user balance management, bookings retrieval, and profile customization. Designed and developed QR code functionalities for physical gate access and event participation. Added support for multiple accounts, including children's profiles, with features for events and birthday planning.",
       },

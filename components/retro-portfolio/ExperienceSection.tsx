@@ -9,7 +9,7 @@ export function ExperienceSection() {
       <Card className="bg-black border-green-400 text-green-400">
         <CardHeader>
           <CardTitle className="text-lg md:text-xl text-green-400">
-            {"> EXECUTING WORK_HISTORY.BAT..."}
+            {"> EXECUTING EXPERIENCE.BAT..."}
             <span className="animate-pulse">_</span>
           </CardTitle>
           <div className="text-xs text-green-500">

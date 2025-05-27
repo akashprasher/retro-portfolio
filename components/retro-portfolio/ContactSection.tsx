@@ -22,7 +22,7 @@ export function ContactSection() {
     <Card className="bg-black border-green-400 text-green-400 h-full">
       <CardHeader>
         <CardTitle className="text-lg md:text-xl text-green-400">
-          {"> INITIALIZING CONTACT.COM..."}
+          {"> INITIALIZING CONTACT.INFO..."}
           <span className="animate-pulse">_</span>
         </CardTitle>
         <div className="text-xs text-green-500">CONNECTION PROTOCOLS READY</div>
@@ -32,7 +32,7 @@ export function ContactSection() {
           <div className="text-base md:text-lg font-semibold text-green-300 mb-6">
             ESTABLISH CONNECTION
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
             {contactData.contactMethods.map((method, index) => (
               <Button
                 key={index}

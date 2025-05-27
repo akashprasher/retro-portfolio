@@ -16,6 +16,7 @@ import {
   SecretTerminal,
 } from "@/components/retro-portfolio";
 import { aboutData, terminalCommands, easterEggs } from "@/data";
+import Image from "next/image";
 
 export default function RetroPortfolio() {
   const [currentTime, setCurrentTime] = useState("");
@@ -31,6 +32,7 @@ export default function RetroPortfolio() {
   const [showSecretTerminal, setShowSecretTerminal] = useState(false);
   const [terminalInput, setTerminalInput] = useState("");
   const [terminalHistory, setTerminalHistory] = useState<string[]>([]);
+  const [touchCount, setTouchCount] = useState(0);
 
   const fullText = aboutData.fullText;
 
@@ -63,6 +65,17 @@ export default function RetroPortfolio() {
   }, []);
 
   useEffect(() => {
+    if (touchCount >= 3) {
+      // setShowContent(true);
+      setMatrixMode(true);
+      setTouchCount(0);
+      setTimeout(() => {
+        setMatrixMode(false);
+      }, 3000);
+    }
+  }, [touchCount]);
+
+  useEffect(() => {
     // Typewriter effect for the name
     if (!isLoading && activeSection === "about") {
       let index = 0;
@@ -74,7 +87,7 @@ export default function RetroPortfolio() {
           clearInterval(typeTimer);
           setShowContent(true);
         }
-      }, 100);
+      }, 25);
 
       return () => clearInterval(typeTimer);
     }
@@ -208,12 +221,24 @@ export default function RetroPortfolio() {
 
       <div className="max-w-7xl mx-auto p-3 md:p-6 grid grid-cols-1 xl:grid-cols-5 gap-4 md:gap-6 relative z-10 min-h-[calc(100vh-120px)]">
         {/* Navigation */}
-        <div className="xl:col-span-1">
-          <Navigation
-            activeSection={activeSection}
-            setActiveSection={setActiveSection}
-            resetContent={resetContent}
-          />
+        <div className="xl:col-span-1 flex flex-col h-full">
+          <div className="order-2 md:order-1">
+            <Navigation
+              activeSection={activeSection}
+              setActiveSection={setActiveSection}
+              resetContent={resetContent}
+            />
+          </div>
+          <div className=" flex-grow order-1 md:order-2 md:mb-0 md:mt-4 mb-4 mt-0">
+            <Image
+              src={"/profile-2.png"}
+              alt="Akash Prasher"
+              width={100}
+              height={100}
+              className="rounded-md w-full sm:h-full h-16 object-contain bg-green-400"
+              onClick={() => setTouchCount(touchCount + 1)}
+            />
+          </div>
         </div>
 
         {/* Main Content */}

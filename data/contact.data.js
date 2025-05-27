@@ -3,17 +3,22 @@ export const contactData = {
     {
       label: "EMAIL.PROTOCOL",
       icon: "Mail",
-      link: "mailto:your.email@example.com"
+      link: "mailto:akashprashar@hotmail.com"
     },
     {
       label: "GITHUB.REPO",
       icon: "Github",
-      link: "https://github.com/yourusername"
+      link: "https://github.com/akashprasher"
     },
     {
       label: "LINKEDIN.NET",
       icon: "Linkedin",
-      link: "https://linkedin.com/in/yourprofile"
+      link: "https://linkedin.com/in/akashprasher"
+    },
+    {
+      label: "INSTAGRAM.SOCIAL",
+      icon: "Instagram",
+      link: "https://www.instagram.com/akash_prashar/"
     }
   ],
   statusMessages: [
