@@ -4,3 +4,4 @@ export { educationData } from "./education.data";
 export { contactData } from "./contact.data";
 export { terminalCommands } from "./terminal.data";
 export { easterEggs } from "./easter-eggs.data";
+export { themeData } from "./theme.data";
