@@ -14,6 +14,7 @@ import {
   MatrixRain,
   SecretMessage,
   SecretTerminal,
+  GlitchImage,
 } from "@/components/retro-portfolio";
 import { aboutData, terminalCommands, easterEggs } from "@/data";
 import Image from "next/image";
@@ -236,9 +237,9 @@ export default function RetroPortfolio() {
               resetContent={resetContent}
             />
           </div>
-          <div className=" flex-grow order-1 md:order-2 md:mb-0 md:mt-4 mb-4 mt-0">
-            <Image
-              src={"/profile-2.png"}
+          <div className="flex-grow order-1 md:order-2 md:mb-0 md:mt-4 mb-4 mt-0 h-16 sm:h-auto">
+            <GlitchImage
+              src="/profile-2.png"
               alt="Akash Prasher"
               width={100}
               height={100}

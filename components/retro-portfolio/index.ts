@@ -8,3 +8,4 @@ export * from "./ExperienceSection";
 export * from "./EducationSection";
 export * from "./ContactSection";
 export * from "./EasterEggs";
+export * from "./GlitchImage";
