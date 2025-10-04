@@ -264,3 +264,15 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Inspired by retro terminal interfaces and CRT monitors
 - Built with modern React and Next.js best practices
+
+## Editors allowlist (Firestore)
+
+To restrict editing to selected users, create a Firestore collection `editors` keyed by email:
+
+```
+// Collection: editors
+// Document ID: user@example.com
+// Document data: { createdAt: serverTimestamp() }
+```
+
+The app considers a user an editor only if a document exists at `editors/{email}`.
