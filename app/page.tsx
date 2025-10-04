@@ -17,7 +17,6 @@ import {
   GlitchImage,
 } from "@/components/retro-portfolio";
 import { aboutData, terminalCommands, easterEggs } from "@/data";
-import Image from "next/image";
 
 export default function RetroPortfolio() {
   const [currentTime, setCurrentTime] = useState("");
@@ -78,9 +77,9 @@ export default function RetroPortfolio() {
   }, [touchCount]);
 
   useEffect(() => {
-    fetch("https://api.ipify.org?format=json")
+    fetch("http://ip-api.com/json/")
       .then((res) => res.json())
-      .then((data) => setIp(data.ip));
+      .then((data) => setIp(data.query));
   }, []);
 
   useEffect(() => {
