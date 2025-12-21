@@ -18,15 +18,15 @@ export const aboutData = {
   stats: [
     {
       label: "EXPERIENCE",
-      value: "3+ YEARS"
+      value: "3+ YEARS",
     },
     {
       label: "PROJECTS",
-      value: "10+ COMPLETED"
+      value: "6+ COMPLETED",
     },
     {
       label: "STATUS",
-      value: "AVAILABLE"
-    }
-  ]
-}; 
+      value: "AVAILABLE",
+    },
+  ],
+};

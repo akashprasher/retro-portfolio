@@ -17,6 +17,7 @@ import {
   GlitchImage,
 } from "@/components/retro-portfolio";
 import { aboutData, terminalCommands, easterEggs } from "@/data";
+import { showMatrixTillNewYear } from "@/lib/utils";
 
 export default function RetroPortfolio() {
   const [currentTime, setCurrentTime] = useState("");
@@ -75,11 +76,18 @@ export default function RetroPortfolio() {
       }, 3000);
     }
   }, [touchCount]);
+  // priority
+  useEffect(() => {
+    fetch("https://ipwho.is/")
+      .then((res) => res.json())
+      .then((data) => setIp(data.ip));
+  }, []);
 
   useEffect(() => {
-    fetch("http://ip-api.com/json/")
-      .then((res) => res.json())
-      .then((data) => setIp(data.query));
+    if (showMatrixTillNewYear()) {
+      console.log("Matrix mode activated till New Year!");
+      setMatrixMode(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -214,6 +222,7 @@ export default function RetroPortfolio() {
 
       {/* Easter Eggs */}
       <MatrixRain matrixMode={matrixMode} />
+      <MatrixRain matrixMode={matrixMode} isWhite={true} />
       <SecretMessage secretMessage={secretMessage} />
       <SecretTerminal
         showSecretTerminal={showSecretTerminal}

@@ -4,6 +4,10 @@ import { aboutData } from "@/data";
 import { useEffect } from "react";
 import { useState } from "react";
 
+import Image from "next/image";
+import { MoveUpRight } from "lucide-react";
+import { showFestivBanner } from "@/lib/utils";
+
 interface AboutSectionProps {
   typewriterText: string;
   fullText: string;
@@ -75,6 +79,31 @@ export function AboutSection({
                 ))}
               </div>
             </div>
+            {/* TODO: MAKE THIS DYNAMIC, SHOULD BE ABLE TO HANDLE FROM DASHBOARD */}
+            {/* CURRENT: TILL 25 Dec 2025 */}
+            {showFestivBanner(new Date(2025, 11, 25)) && (
+              <div className="w-full h-full relative sm:h-80">
+                <div className="absolute bottom-2 right-2 text-green-600 text-xs">
+                  <a
+                    href="https://tenor.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center space-x-1"
+                  >
+                    Credits
+                    <MoveUpRight height={10} />
+                  </a>
+                </div>
+                <Image
+                  src="/merry-christmas.gif"
+                  // src="/new-year.gif"
+                  alt="Akash Prasher"
+                  width={100}
+                  height={100}
+                  className="rounded-md w-full sm:h-full h-16 object-contain bg-green-400"
+                />
+              </div>
+            )}
           </div>
         )}
       </CardContent>
