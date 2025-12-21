@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 // Matrix Rain Component
 interface MatrixRainProps {
   matrixMode: boolean;
+  isWhite?: boolean;
 }
 
-export function MatrixRain({ matrixMode }: MatrixRainProps) {
+export function MatrixRain({ matrixMode, isWhite = false }: MatrixRainProps) {
   const [drops, setDrops] = useState<
     Array<{ id: number; x: number; y: number; speed: number }>
   >([]);
@@ -42,7 +43,9 @@ export function MatrixRain({ matrixMode }: MatrixRainProps) {
       {drops.map((drop) => (
         <div
           key={drop.id}
-          className="absolute text-green-400 text-sm font-mono animate-pulse"
+          className={`absolute text-green-400 text-sm font-mono animate-pulse ${
+            isWhite ? "text-white" : "text-green-400"
+          }`}
           style={{
             left: drop.x,
             top: drop.y,
